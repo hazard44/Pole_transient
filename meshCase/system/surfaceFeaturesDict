@@ -17,6 +17,7 @@ FoamFile
 surfaces
 (
     "Body_Geometry.stl"
+    "MeshRefinement.stl"
 );
 
 includedAngle       150;

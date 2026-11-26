@@ -30,7 +30,7 @@ solid patch_2_0
   endloop
  endfacet
 endsolid patch_2_0
-solid patch_3_0
+solid patch_3_1
  facet normal -0.9995065331459045 -0.03140873461961746 0.0
   outer loop
    vertex -0.6252466430664063 0.007848814964294433 -0.01
@@ -1431,7 +1431,7 @@ solid patch_3_0
    vertex -0.6252466430664063 -0.007848814964294433 0.01
   endloop
  endfacet
-endsolid patch_3_0
+endsolid patch_3_1
 solid patch_4_0
  facet normal 0.0 -1.0 0.0
   outer loop

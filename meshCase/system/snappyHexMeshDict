@@ -16,7 +16,7 @@ FoamFile
 
 castellatedMesh true;
 snap            true;
-addLayers       false;
+addLayers       true;
 
 geometry
 {
@@ -37,9 +37,9 @@ geometry
                 name patch_2_0;
             }
 
-            patch_3_0
+            patch_3_1
             {
-                name patch_3_0;
+                name patch_3_1;
             }
 
             patch_4_0
@@ -53,6 +53,13 @@ geometry
             }
 
         }
+    }
+
+    "MeshRefinement.stl"
+    {
+        type triSurfaceMesh;
+        name MeshRefinement;
+        file "MeshRefinement.stl";
     }
 
 };
@@ -71,6 +78,11 @@ castellatedMeshControls
             file "Body_Geometry.eMesh";
             level 0;
         }
+        {
+            file "MeshRefinement.eMesh";
+            level 0;
+        }
+
     );
 
     refinementSurfaces
@@ -80,12 +92,24 @@ castellatedMeshControls
             level (0 0);
         }
 
+        MeshRefinement
+        {
+            level (1 1);
+            faceZone MeshRefinement;
+        }
+
     }
 
     resolveFeatureAngle 30;
 
     refinementRegions
     {
+        MeshRefinement
+        {
+            mode distance;
+            levels ((0.0 1));
+        }
+
     }
 
     locationInMesh (0.0 0.0 0.0);
@@ -110,6 +134,11 @@ addLayersControls
     relativeSizes true;
     layers
     {
+        "patch_3_1"
+        {
+            nSurfaceLayers 5;
+            expansionRatio 1.2;
+        }
     }
 
     expansionRatio 1.2;

@@ -24,5 +24,15 @@ Body_Geometry.stl
     writeObj            yes;
 }
 
+MeshRefinement.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle   150;
+    }
+    writeObj            yes;
+}
+
 
 // ************************************************************************* //
