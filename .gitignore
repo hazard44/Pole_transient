@@ -1,0 +1,135 @@
+# Created by https://www.gitignore.io/api/openfoam
+# Edit at https://www.gitignore.io/?templates=openfoam
+
+
+# Project Files
+# =============================================================================
+
+# place to store old cases
+ARCHIVE/run*
+
+# zipped archive
+archive*.tar.gz
+archive*.tar.bz2
+ARCHIVE*.tar.bz2
+post/*.png
+post/*.jpg
+
+tmp
+
+
+
+# FreeCAD
+# =============================================================================
+*.FCStd[0-9]
+*.[0-9]*-*[0-9].FCBak
+
+Allmesh.bat
+Allmesh.ps1
+Allrun.bat
+Allrun.ps1
+
+
+
+# OpenFOAM Meshing
+# =============================================================================
+
+# mesh data that is no dictionary
+*ase/constant/polyMesh
+*ase/constant/polyMesh/points*
+*ase/constant/polyMesh/faces*
+*ase/constant/polyMesh/owner*
+*ase/constant/polyMesh/neighbour*
+*ase/constant/polyMesh/boundary*
+*ase/constant/polyMesh/sets
+*ase/constant/polyMesh/*
+*ase/constant/extendedFeatureEdgeMesh/*
+
+# Zones and levels
+*Level*
+*Zone*
+
+# snappyHexMesh files that are not snappyHexMeshDict
+meshCase/constant/polyMesh/refinementHistory*
+meshCase/constant/polyMesh/surfaceIndex*
+meshCase/constant/triSurface/patch_*_0.stl
+meshCase/constant/triSurface/*.eMesh
+
+# freecad meshing
+mesh_outside.stl
+surfaceMesh.vtk
+
+# cfmesh
+meshCase/*.fms
+
+
+
+# OpenFOAM Preprocessing
+# =============================================================================
+
+#exclude important folders and files:
+!case/0/
+!case/constant/thermophysicalProperties
+!case/constant/turbulenceProperties
+!case/system/
+!meshCase/system/
+!.gitignore
+
+
+
+# OpenFOAM Solving
+# =============================================================================
+
+## Libraries
+case/system/alphaDivScheme
+case/system/cAlpha
+case/system/turbulenceLib
+
+## Timestep directories
+case/0.*
+case/[1-9]*
+
+## Fields that must get ignored
+*/phi*
+*/meshPhi*
+
+## Decomposed domain
+processor*
+
+## logfiles
+log.*
+*log
+
+
+
+# OpenFOAM Postprocessing
+# =============================================================================
+
+# paraview/ParaFoam
+# *.foam
+*.OpenFOAM
+
+# function object and post-processing data
+forces
+case/forces
+postProcessing
+case/postProcessing
+
+
+
+# OpenFOAM additional stuff
+# =============================================================================
+
+# Needed when C++ code is built using the OpenFOAM library, since it does not
+# use a "normal" build tool (make, cmake, ..).
+lnInclude
+*.dep
+*.data
+linux*
+Darwin*
+dynamicCode
+
+
+
+
+# End of https://www.gitignore.io/api/openfoam
